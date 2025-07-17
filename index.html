@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AcoVision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"},
+              secondary: {"50":"#f0f9ff","100":"#e0f2fe","200":"#bae6fd","300":"#7dd3fc","400":"#38bdf8","500":"#0ea5e9","600":"#0284c7","700":"#0369a1","800":"#075985","900":"#0c4a6e","950":"#082f49"},
+            },
+            animation: {
+              'spin-reverse': 'spin-reverse 1s linear infinite',
+            },
+            keyframes: {
+              'spin-reverse': {
+                'to': { transform: 'rotate(-360deg)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/css">
+        /* Dark input field (used in Create Task modal) */
+        .input-field { 
+            display: block; 
+            width: 100%; 
+            background-color: #374151; /* gray-700 */
+            color: #F9FAFB; /* gray-50 */
+            border: 1px solid #4B5563; /* gray-600 */
+            border-radius: 0.5rem; 
+            padding: 0.75rem 1rem;
+        } 
+        .input-field::placeholder {
+            color: #9CA3AF; /* gray-400 */
+        }
+        .input-field:focus { 
+            outline: none; 
+            --tw-ring-color: #3B82F6; 
+            border-color: #3B82F6; 
+            box-shadow: 0 0 0 2px var(--tw-ring-color); 
+        }
+        .input-field[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1) brightness(1.5) grayscale(100%);
+            cursor: pointer;
+        }
+        
+        /* Light input field (used in other modals) */
+        .input-field-light {
+            display: block; width: 100%; border-width: 1px; border-color: #D1D5DB; border-radius: 0.375rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); padding: 0.5rem 0.75rem;
+        }
+        .input-field-light:focus {
+            outline: none; --tw-ring-color: #3B82F6; border-color: #3B82F6; box-shadow: 0 0 0 3px var(--tw-ring-color);
+        }
+        
+        /* Form controls */
+        .form-radio { color: #2563EB; }
+        .form-checkbox { color: #2563EB; border-radius: 0.25rem; }
+        .form-select { border-color: #D1D5DB; border-radius: 0.375rem; padding: 0.5rem 2.5rem 0.5rem 0.75rem; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
+    "@google/genai": "https://esm.sh/@google/genai@^1.7.0",
+    "recharts": "https://esm.sh/recharts@^3.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
